@@ -6,13 +6,11 @@ public class KySu extends Person {
 	private String nganh;
 	private int namTN;
 	private int n;
-	private Person []person;
-	public KySu(String hoTen, String ngaySinh, String queQuan, String nganh, int namTN, int n, Person[] person) {
+	public KySu(String hoTen, String ngaySinh, String queQuan, String nganh, int namTN, int n) {
 		super(hoTen, ngaySinh, queQuan);
 		this.nganh = nganh;
 		this.namTN = namTN;
 		this.n = n;
-		this.person = person;
 	}
 	
 	public KySu() {
@@ -43,23 +41,13 @@ public class KySu extends Person {
 	public void setN(int n) {
 		this.n = n;
 	}
-
-	public Person[] getPerson() {
-		return person;
-	}
-
-	public void setPerson(Person[] person) {
-		this.person = person;
-	}
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Nhập số lượng kỹ sư: ");
 		n = sc.nextInt();
 		sc.nextLine();
-		person = new Person[n];
-		for (int i = 0; i < n; i++) {
-			person[i] = new Person();
-			person[i].nhap();
+		for(int i = 0; i < n; i++) {
+			super.nhap();
 		System.out.println("Nhập ngành: ");
 		nganh = sc.nextLine();
 		System.out.println("Nhập năm tốt nghiệp: ");
@@ -71,7 +59,7 @@ public class KySu extends Person {
 		System.out.println("Thông tin các kỹ sư");
 		for (int i = 0; i < n; i++) {
 			System.out.println("Thông tin kỹ sư " + (i +1));
-			person[i].xuat();
+			super.xuat();
 		System.out.println("Ngành: " + nganh);
 		System.out.println("Năm tốt nghiệp: " + namTN);
 		}

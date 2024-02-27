@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class KySu extends Person {
 	private String nganh;
-	private int namTN;
+	int namTN;
+
 	public KySu(String hoTen, String ngaySinh, String queQuan, String nganh, int namTN, int n) {
 		super(hoTen, ngaySinh, queQuan);
 		this.nganh = nganh;
@@ -43,9 +44,10 @@ public class KySu extends Person {
 		namTN = sc.nextInt();
 		sc.nextLine();
 	}
+
 	public void xuat() {
-			super.xuat();
-			System.out.println("Ngành: " + nganh);
-			System.out.println("Năm tốt nghiệp: " + namTN);
+		super.xuat();
+		System.out.println("Ngành: " + nganh);
+		System.out.println("Năm tốt nghiệp: " + namTN);
 	}
 }
